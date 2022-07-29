@@ -253,6 +253,10 @@ change.addMessage("RedPG Accident Prevention System (RAPS) permite sair do RedPG
 change.addMessage("Criação de novas contas não salva mais nomes de indivíduos. Nomes guardados anteriormente serão removidos do servidor. Isso não afeta o funcionamento das contas nem do sistema - o Nome já não era utilizado, apenas não será mais requisitado nem guardado.", "pt");
 change.addMessage("Atualização das libraries utilizadas pelo RedPG.", "pt");
 
+change = new Changelog(0, 36, 1);
+change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
+change.addMessage("Novas mensagens de doação.", "pt");
+
 //delete (change);
 
 Changelog.finished();
