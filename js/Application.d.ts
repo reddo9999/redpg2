@@ -333,7 +333,7 @@ declare class PseudoWord {
     constructor(word: string);
     addTranslation(word: string): void;
     getOriginal(): string;
-    getTranslation(): String;
+    getTranslation(): string | String;
 }
 declare class PseudoLanguage {
     singleLetters: Array<string>;
@@ -2464,7 +2464,7 @@ declare class PicaCanvasArt {
     getUserId(): number;
     setSpecial(index: string, value: any): void;
     getSpecial(index: string, defValue: any): any;
-    exportAsObject(): (number | Object)[];
+    exportAsObject(): (string | number | Object)[];
     /**
      * Can throw errors
      * @param str

@@ -6,6 +6,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -11523,6 +11525,10 @@ ptbr.setLingo("_REDPGDONATIONTITLE_", "Doações");
 ptbr.setLingo("_REDPGDONATIONEXP1_", "RedPG é um sistema gratuito e permanecerá gratuito enquanto isso for possível. Mas o servidor possui um custo e alguém precisa pagar.");
 ptbr.setLingo("_REDPGDONATIONEXP2_", "Através de doações, você funda o desenvolvimento do sistema e ajuda a pagar as mensalidades do servidor. Com a ajuda de todos, RedPG poderá ser grátis para sempre!");
 ptbr.setLingo("_REDPGDONATIONEXP3_", "Sempre que fizer uma doação, tente realizar ela a partir de uma conta registrada no mesmo nome registrado no RedPG. Assim, no futuro suas doações poderão ser contabilizadas pelo sistema do RedPG!");
+ptbr.setLingo("_REDPGDONATIONEXP4_", "Doações podem ser enviadas (através de PIX) para:");
+ptbr.setLingo("_REDPGDONATIONEXP5_", "Doações também são bem-vindas através do Paypal:");
+ptbr.setLingo("_REDPGDONATIONEXP6_", "Clique aqui para realizar uma doação a partir de qualquer banco.");
+ptbr.setLingo("_REDPGDONATIONEXP7_", "Abaixo listamos todas as maneiras de doações. A melhor forma é através do PIX, visto a ausência de taxas, mas também é possível doar através do PayPal ou por transferência bancária.");
 ptbr.setLingo("_REDPGLINKSTITLE_", "Links úteis");
 ptbr.setLingo("_REDPGLINKFRONTBUTTON_", "RedPG Front on GitHub");
 ptbr.setLingo("_REDPGLINKFRONTEXP_", "Versão offline do cliente RedPG. Usuários que queiram abrir o RedPG a partir da própria máquina devem baixar versões atualizadas aqui. A versão offline permite que jogadores e mestres compartilhem sons que estejam dentro da pasta Sons, sem a necessidade de um servidor para compartilhar sons.");
@@ -12708,6 +12714,9 @@ change.addMessage("TypeScript atualizado para TypeScript 4. Favor reportar qualq
 change.addMessage("RedPG Accident Prevention System (RAPS) permite sair do RedPG sem ter chat/fichas abertas.", "pt");
 change.addMessage("Criação de novas contas não salva mais nomes de indivíduos. Nomes guardados anteriormente serão removidos do servidor. Isso não afeta o funcionamento das contas nem do sistema - o Nome já não era utilizado, apenas não será mais requisitado nem guardado.", "pt");
 change.addMessage("Atualização das libraries utilizadas pelo RedPG.", "pt");
+change = new Changelog(0, 36, 1);
+change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
+change.addMessage("Novas mensagens de doação.", "pt");
 //delete (change);
 Changelog.finished();
 /// <reference path='../../Changelog.ts' />
@@ -18139,7 +18148,7 @@ var PicaToolShare = /** @class */ (function (_super) {
         var url = UI.Pica.Board.getUrl();
         var newImage = new MessageImage();
         newImage.findPersona();
-        newImage.setName(name); // WE don't hold on to the name, so this is not possibru!
+        newImage.setName("Pica"); // WE don't hold on to the name, so this is not possibru!
         newImage.setMsg(url);
         UI.Chat.sendMessage(newImage);
     };
