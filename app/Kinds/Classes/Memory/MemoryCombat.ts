@@ -359,6 +359,15 @@ class MemoryCombat extends TrackerMemory {
         if (foundOne) {
             this.reorderCombatants();
             this.triggerChange();
+        } else {
+            let sheet = DB.SheetDB.getSheet(id);
+            if (sheet != null && sheet != undefined) {
+                this.addParticipant(sheet);
+                this.applyInitiative(id, initiative);
+            } else {var msg = new ChatSystemMessage(true);
+                msg.addText("_CHATCANTADDINITIATIVE_");
+                UI.Chat.printElement(msg.getElement());
+            }
         }
     }
 

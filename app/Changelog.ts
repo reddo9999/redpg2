@@ -257,6 +257,10 @@ change = new Changelog(0, 36, 1);
 change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
 change.addMessage("Novas mensagens de doação.", "pt");
 
+change = new Changelog(0, 36, 2);
+change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
+change.addMessage("Se uma ficha rolar iniciativa e não estiver no tracker, ela será adicionada ao tracker como NPC.", "pt");
+
 //delete (change);
 
 Changelog.finished();

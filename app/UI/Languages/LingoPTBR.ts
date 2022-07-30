@@ -388,6 +388,7 @@ ptbr.setLingo("_CHATCOMMANDREQUEST_", "%a deseja aplicar um comando em %b.");
 ptbr.setLingo("_CHATCOMMANDCLICK_", "Clique aqui para permitir.");
 ptbr.setLingo("_CHATMESSAGESHEETUPDATED_", "A ficha \"%a\" foi atualizada.");
 ptbr.setLingo("_CHATMESSAGESHEETUPDATEDCLICKER_", "Clique aqui para atualizar ela.");
+ptbr.setLingo("_CHATCANTADDINITIATIVE_", "Não é possível adicionar a ficha ao Combat Tracker sem carregar a lista de fichas.");
 
 // Chat Mood
 ptbr.setLingo("_MOODNONE_", "Nenhum");
