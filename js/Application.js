@@ -2104,6 +2104,18 @@ var MemoryCombat = /** @class */ (function (_super) {
             this.reorderCombatants();
             this.triggerChange();
         }
+        else {
+            var sheet = DB.SheetDB.getSheet(id);
+            if (sheet != null && sheet != undefined) {
+                this.addParticipant(sheet);
+                this.applyInitiative(id, initiative);
+            }
+            else {
+                var msg = new ChatSystemMessage(true);
+                msg.addText("_CHATCANTADDINITIATIVE_");
+                UI.Chat.printElement(msg.getElement());
+            }
+        }
     };
     MemoryCombat.prototype.setInitiative = function (combatant, initiative) {
         var idx = this.combatants.indexOf(combatant);
@@ -11846,6 +11858,7 @@ ptbr.setLingo("_CHATCOMMANDREQUEST_", "%a deseja aplicar um comando em %b.");
 ptbr.setLingo("_CHATCOMMANDCLICK_", "Clique aqui para permitir.");
 ptbr.setLingo("_CHATMESSAGESHEETUPDATED_", "A ficha \"%a\" foi atualizada.");
 ptbr.setLingo("_CHATMESSAGESHEETUPDATEDCLICKER_", "Clique aqui para atualizar ela.");
+ptbr.setLingo("_CHATCANTADDINITIATIVE_", "Não é possível adicionar a ficha ao Combat Tracker sem carregar a lista de fichas.");
 // Chat Mood
 ptbr.setLingo("_MOODNONE_", "Nenhum");
 ptbr.setLingo("_MOODNIGHT_", "Noite");
@@ -12717,6 +12730,9 @@ change.addMessage("Atualização das libraries utilizadas pelo RedPG.", "pt");
 change = new Changelog(0, 36, 1);
 change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
 change.addMessage("Novas mensagens de doação.", "pt");
+change = new Changelog(0, 36, 2);
+change.addMessage("TODO: ADD ENGLISH MESSAGES", "en");
+change.addMessage("Se uma ficha rolar iniciativa e não estiver no tracker, ela será adicionada ao tracker como NPC.", "pt");
 //delete (change);
 Changelog.finished();
 /// <reference path='../../Changelog.ts' />
